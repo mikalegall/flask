@@ -11,6 +11,7 @@ def main():
 	print(eläin.sano_jotain())
 	kisu = Kissa()
 	print(kisu.sano_jotain())
+	print(f"Kisu peri Animal-luokasta nimen {kisu.name}, jota ei ylikirjoitettu") 
 
 #Jos tiedostoa ajetaan suoraan komentoriviltä (eikä ole esim. importattu ipython3:seen) 
 if __name__ == "__main__":
