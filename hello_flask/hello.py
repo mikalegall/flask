@@ -16,3 +16,5 @@ def controller():
 if __name__ == "__main__":
 	#Käynnistä paikallinen kehityspalvelin
 	app.run(debug=True, port=8888)
+	#Käynnistyttyään vastaanottaa kutsun endpointissa
+    	#http://127.0.0.1:8888/nettiosoite
