@@ -1,18 +1,18 @@
-#Kirjastojen nimet pienellä ja luokkien nimet isolla
-##Tuodaan flask-kirjastosta luokka nimeltä Flask
+#Kerrotaan mistä kirjastosta (kirjastojen nimet pienellä alkukirjaimella) tuodaan haluttu luokka hyödynnettäväksi (luokkien nimet isolla alkukirjaimella)
 from flask import Flask
 
 #Flask-luokan konstruktori ottaa parametrikseen main-metodin
 app = Flask(__name__)
 
 #Endpoint
-@app.route("/")
+@app.route('/nettiosoite')
 
 #Funktiot määritellään avainsanalla def ja lohko aloitetaan kaksoispisteellä
-def index():
-    #Funktion sisältämän lohkon sisennys on pakollista
-    return "Hei Mika!"
-    
+def controller():
+	 #Funktion sisältämän lohkon sisennys on syntaksissa pakollista
+	 return "Moikka moi!"
 
+#Jos tiedostoa ajetaan suoraan komentoriviltä (eikä ole esim. importattu ipython3:seen) 
 if __name__ == "__main__":
-	app.run(debug=True, port=8888) #Paikallinen kehityspalvelin
+	#Käynnistä paikallinen kehityspalvelin
+	app.run(debug=True, port=8888)
