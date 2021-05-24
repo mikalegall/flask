@@ -64,13 +64,12 @@ Vaikka versio 2.0 on jo julkaistu kannattanee silti vielä jonkun aikaa toimia a
 
 
 ### [pw1.1 (Hei maailma)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw1-hello-flask-world): HTML
-https://github.com/mikalegall/flask/tree/main/hello_html
+https://github.com/mikalegall/flask/blob/main/hello_html/index.html
 <br>
 <br>
 ### [pw1.2 (Hei maailma) & pw1.4 (koodin kommentointi) ](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw1-hello-flask-world): Flask ja kommentointi
-https://github.com/mikalegall/flask/tree/main/hello_flask
+https://github.com/mikalegall/flask/blob/main/hello_flask/hello.py
 <br>
 <br>
 ### [pw1.3 (Hei maailma)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw1-hello-flask-world): Python
-
-https://github.com/mikalegall/flask/tree/main/hello_python
+https://github.com/mikalegall/flask/blob/main/hello_python/hello.py
