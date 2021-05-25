@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang ="fi">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Otsikko</title>
+	</head>
+	<body>
+		<p>
+			<h1>Otsikko</h1>
+		{% if ekahaku %}
+		<p>muuttujassa db_a oli sisältöä</p>
+                {% else %}
+                <p>muuttujassa db_a ei ollut sisältöä</p>
+		{% endif %}	
+
+                {% if tokahaku %}
+                <p>muuttujassa db_b oli sisältöä</p>
+		{% else %}
+		<p>muuttujassa db_b ei ollut sisältöä</p>                
+		{% endif %}
+	
+		<p>
+	</body>
+</html>
