@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Laajennusta pukkaa block content kautta eli tämä teksti on kirjoitettu form_post.html sivulle
+<br>
+<br>
+Post
+<form method=POST>
+Kirjoita alla olevaan laatikkoon sivulle tulostettava teksti:
+<br>
+<input type=text name="print_me">
+<br>
+<input type=submit>
+</form>
+<br>
+Tulostus näkyy alla (tämä pöhkö ei muista edellisisä tulostuksia)
+<br>
+{{ tulosta }}
+</p>
+{% endblock content %}
