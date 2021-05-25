@@ -18,7 +18,14 @@ BE: Python ([Object-oriented programming](https://fi.wikipedia.org/wiki/Olio-ohj
 #Valinnainen https://en.wikipedia.org/wiki/IPython (toimii Anacondan mukana tulevan Jupyter Notebookin tavoin "input" & "output")
 <br>
 #sudo apt install ipython3
-<br><br>
+
+<br>
+
+FE: Pythonille Djangon "kilpailija" Flask ja [Jinja2 HTML-muottimoottori](https://jinja2docs.readthedocs.io/en/stable/) fronttiin
+
+        sudo apt install python3-flask
+
+<br>
 Perusaloitusrunko
 
     #Kerrotaan mistä kirjastosta (kirjastojen nimet pienellä alkukirjaimella) tuodaan haluttu luokka hyödynnettäväksi (luokkien nimet isolla alkukirjaimella)
@@ -41,11 +48,6 @@ Perusaloitusrunko
     	app.run(debug=True, port=8888)
     #Käynnistyttyään vastaanottaa kutsun endpointissa
     http://127.0.0.1:8888/nettiosoite
-
-
-FE: Pythonille Djangon "kilpailija" Flask ja [Jinja2 HTML-muottimoottori](https://jinja2docs.readthedocs.io/en/stable/) fronttiin
-
-        sudo apt install python3-flask
 
 
 Pilvipalveluja: [Linode](https://www.linode.com/pricing/), [Digital Ocean](https://www.digitalocean.com/pricing), [Hetzner](https://www.hetzner.com/cloud) jne.
