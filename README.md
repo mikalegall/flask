@@ -21,7 +21,7 @@ BE: Python ([Object-oriented programming](https://fi.wikipedia.org/wiki/Olio-ohj
 
 <br>
 
-FE: Pythonille Djangon "kilpailija" Flask ja [Jinja2 HTML-muottimoottori](https://jinja2docs.readthedocs.io/en/stable/) fronttiin
+FE: Pythonille Djangon "kilpailija" [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) (sisältää [Jinja2 HTML-muottimoottorin](https://jinja2docs.readthedocs.io/en/stable/)) fronttiin
 
         sudo apt install python3-flask
 
