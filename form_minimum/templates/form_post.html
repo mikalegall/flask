@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Laajennusta pukkaa block content kautta eli tämä teksti on kirjoitettu form_post.html sivulle
+    <br>
+    <br>
+<form method=POST>
+
+    <input type=hidden name="cross_site_request_forgery" value="oisKivaKunTämäOlisiAutomatisoitu">
+
+    Etunimi:
+    <br>
+    <input type=text name="name">
+    <br>
+    <br>
+    Joku päivä:<br>
+    <input type=date name="date"><br>
+    <br>
+    <br>
+    Sähköposti:
+    <br>
+    <input type=email name="email"><br>
+    Salainen sana:
+    <br>
+    <input type=password name="password">
+    <br>
+    <br>
+
+    <label>
+        Annoin juuri oikean salasanani oikeaan sähköpostiini <input type=checkbox name="true_password"></label>
+    <br>
+    <br>
+    <input type=submit>
+</form>
+</p>
+{% endblock content %}
