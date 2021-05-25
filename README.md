@@ -83,4 +83,20 @@ https://github.com/mikalegall/flask/blob/main/hello_flask/hello.py
 ### [pw1.3 (Hei maailma)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw1-hello-flask-world): Python
 https://github.com/mikalegall/flask/blob/main/hello_python/hello.py
 
+<br>
+<br>
 
+### [pw2.1 (Tulosta käyttäjäsyöte sivulle)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw2-muotit-ja-lomakkeet):
+https://github.com/mikalegall/flask/tree/main/print_user_input
+<br>
+<br>
+### [pw2.2 (Eri endpointit)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw2-muotit-ja-lomakkeet):
+https://github.com/mikalegall/flask/tree/main/tuplamuotti
+<br>
+<br>
+### [pw2.3 (Silmukoi listan sisältö fronttiin)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw2-muotit-ja-lomakkeet):
+https://github.com/mikalegall/flask/tree/main/print_list_for_in
+<br>
+<br>
+### [pw2.4 (Lomakerunko)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw2-muotit-ja-lomakkeet):
+https://github.com/mikalegall/flask/tree/main/form_minimum
