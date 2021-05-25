@@ -2,20 +2,18 @@
 
 Tero Karvisen [opissa](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/ "Python Web Service From Idea to Production") saadut etätehtävät MarkDownilla tallennettuna ([Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)):
 <br>
-Kun on tarvetta samanaikaisuuden hallinnalle rinnakkaisilla [säikeillä (thread)](https://wiki.aalto.fi/download/attachments/72895679/luento12.pdf) ei arkkitehtuurisissa valinnoissa välttämättä kannattane suosia siltä osin Pythonia. Pythonissa ei ole erikseen public / private / protected metodeja eikä myöskään ole mitään gettereitä ja settereitä vaan attribuuttia voi käyttää suoraan. Python on tyypittämätön kieli.
+Kun on tarvetta samanaikaisuuden hallinnalle rinnakkaisilla [säikeillä (thread)](https://wiki.aalto.fi/download/attachments/72895679/luento12.pdf) ei arkkitehtuurisissa valinnoissa välttämättä kannattane suosia siltä osin Pythonia. Pythonissa ei ole erikseen public / private / protected metodeja eikä myöskään ole mitään gettereitä ja settereitä vaan attribuuttia voi käyttää suoraan. Python on niin sanotusti tyypittämätön kieli vaikka seillä tyypit ovatkin tuettu (vaihtuvat lennosta).
 
 
 DB: Pythonille [SQLAlchemy](https://en.wikipedia.org/wiki/SQLAlchemy) (ORM) <--> [PostgreSQL](https://terokarvinen.com/search/?q=postgre)
 
-BE: Pythonille Djangon "kilpailija" Flask ([Object-oriented programming](https://fi.wikipedia.org/wiki/Olio-ohjelmointi)) 
+BE: Python ([Object-oriented programming](https://fi.wikipedia.org/wiki/Olio-ohjelmointi)) 
 
     sudo apt update 
 
     sudo apt upgrade
 
     sudo apt install python3
-
-    sudo apt install python3-flask
 
 #Valinnainen https://en.wikipedia.org/wiki/IPython (toimii Anacondan mukana tulevan Jupyter Notebookin tavoin "input" & "output")
 <br>
@@ -45,7 +43,10 @@ Perusaloitusrunko
     http://127.0.0.1:8888/nettiosoite
 
 
-FE: Pythonille Jinja2 HTML-muottimoottori fronttiin
+FE: Pythonille Djangon "kilpailija" Flask ja [Jinja2 HTML-muottimoottori](https://jinja2docs.readthedocs.io/en/stable/) fronttiin
+
+        sudo apt install python3-flask
+
 
 Pilvipalveluja: [Linode](https://www.linode.com/pricing/), [Digital Ocean](https://www.digitalocean.com/pricing), [Hetzner](https://www.hetzner.com/cloud) jne.
 
@@ -73,3 +74,5 @@ https://github.com/mikalegall/flask/blob/main/hello_flask/hello.py
 <br>
 ### [pw1.3 (Hei maailma)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw1-hello-flask-world): Python
 https://github.com/mikalegall/flask/blob/main/hello_python/hello.py
+
+
