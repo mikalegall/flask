@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang ="fi">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Otsikko</title>
+	</head>
+	<body>
+			<h1>Otsikko, {{ nimi }}</h1>
+			{% for item in list %}
+                	<p>{{ item }}</p>
+                	{% endfor %}
+	</body>
+</html>
