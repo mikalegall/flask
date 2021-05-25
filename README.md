@@ -6,6 +6,12 @@ Kun on tarvetta samanaikaisuuden hallinnalle rinnakkaisilla [säikeillä (thread
 
 
 DB: Pythonille [SQLAlchemy](https://en.wikipedia.org/wiki/SQLAlchemy) (ORM) <--> [PostgreSQL](https://terokarvinen.com/search/?q=postgre)
+<br>
+(jolla myös [web-sivun lomakkeet](https://terokarvinen.com/2020/flask-automatic-forms/)
+<br>
+from wtforms.ext.sqlalchemy.orm import model_form
+<br>
+from flask_wtf import FlaskForm)
 
 BE: Python ([Object-oriented programming](https://fi.wikipedia.org/wiki/Olio-ohjelmointi)) 
 
