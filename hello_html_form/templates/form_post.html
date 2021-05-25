@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Laajennusta pukkaa block content kautta eli tämä teksti on kirjoitettu form_post.html sivulle
+<br>
+<br>
+Post versio
+<form method=POST>
+Etunimi:
+<br>
+<input type=text name="first_name">
+<br>
+<br>
+Salainen sana:
+<br>
+<input type=password name="salasana">
+<br>
+<br>
+<input type=submit>
+</form>
+</p>
+{% endblock content %}
