@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fi">
+{%block JSON_LD%}
+{%endblock JSON_LD%}
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css"></style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Le Gall" />
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <a href="https://fi.wikipedia.org/wiki/Pienin_toimiva_tuote" target="_blank">MVP</a>: Toiveiden tynnyrissä on jatkokehityksen backlogilla mm. kohteiden valinta vertailtavaksi korrelaation osalta (hajautettaessa varoja siten, ettei kaikki munat ole samassa korissa haetaan mielellään lievästi negatiivisessa korrelaatiossa olevia kohteita, jotta ne tasoittavat arvoa syöviä muutoksia)
+    <h1>{{ title }}</h1>
+    {%block content%}
+    {%endblock content%}
+
+    {%block time_series%}
+    {%endblock time_series%}
+
+    {%block volatilite%}
+    {%endblock volatilite%}
+</body>
+<script type='text/javascript' id="first"></script>
+
+</html>

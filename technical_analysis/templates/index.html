@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{%block JSON_LD%}
+<!-- https://schema.org/Organization -->
+<script type="application/ld+json">{
+        "@context": "https://schema.org", 
+        "@type": "Organization", 
+        "url": "https://foo.fi/", 
+        "legalName" : "Oma Firma Oy",
+        "foundingDate": "2021",
+        "logo": "https://images.ctfassets.net/logo.svg",
+        "sameAs" : [
+          "https://rakenne.wordpress.com/",
+          "https://pakollinen1234.wordpress.com",
+          "https://github.com/mikalegall/",
+          "https://fi.linkedin.com/in/mika-le-gall-238088212",
+          "https://fi.linkedin.com/in/mika-le-gall-89648385"
+          ],
+          "address" : {
+            "@type": "PostalAddress",
+            "addressLocality" : "Helsinki",
+            "addressCountry" : "FI",
+            "postalCode" : "00100",
+            "streetAddress" : "Jokukatu"
+          },
+           "contactPoint": {
+           "@type": "ContactPoint",
+           "contactType": "sales",
+           "telephone": "+358 40 123 456",
+           "email": "myynti@foo.fi"
+       }  
+      }</script>
+{%endblock JSON_LD%}
+
+
+{%block content%}
+<article>
+    <form method=POST>
+        <input type=hidden name="cross_site_request_forgery" value="needSomeRandomness">
+        Select target
+        <select name="target" id="target">
+            <option value="bitcoin">Bitcoin</option>
+            <option value="ethereum">Ethereum</option>
+            <option value="elisa">Elisa</option>
+            <option value="gofore">Gofore</option>
+            <option value="orion">Orion</option>
+            <option value="telia">Telia</option>
+        </select>
+        <br>
+        <br>
+        Select short period rolling mean
+        <select name="short_rolling_mean" id="short_rolling_mean">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+        </select>
+        <br>
+        <br>
+        Select long period rolling mean
+        <select name="long_rolling_mean" id="long_rolling_mean">
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+        </select>
+        <br>
+        <br>
+        <input type=submit>
+    </form>
+</article>
+
+<article>
+    <h2>Sanastoa</h2>
+    Pörssiin liittyvää sanastoa löytyy sijainnista <a href="https://www.sijoitustieto.fi/Sijoitussanasto"
+        target="_blank">sijoitustieto.fi/Sijoitussanasto</a>
+    <br>
+    <br>
+    Positiivinen tuotto markkinan
+    <br>
+    * noustessa = Bull (Bull market = nousukausi osakemarkkinoilla)
+    <br>
+    * laskiessa = Bear (Bear Market = laskukausi osakemarkkinoilla)
+    <br>
+    <br>
+    Osakesäästämisessä (esim. 15-30 vuotta) ja sijoittamisessa (esim. päivä - 3 vuotta) kilpaillaan verotonta
+    talletuspankin korkotuotto vastaan (joka maksetaan kun varallisuus lepää riskittömästi tilillä). Tuottovertailujen
+    tunnuslukuna on Alfa-kerroin. Mitä korkeampi alfa, sitä paremmin kohde on menestynyt vertailuindeksiin nähden.
+    <br>
+    Sharpen mittari kertoo, kuinka paljon enemmän sijoitus on tuottanut verrattuna riskittömään talletukseen yhtä
+    volatiliteettiyksikköä kohti. Mitä suurempi luku, sitä paremmin sijoitus on tuottanut suhteessa riskiinsä.
+    <br>
+    <br>
+    Arvo-osakkeessa on yleensä alhaiset tunnusluvut
+    <br>
+    * P/E (monenko vuoden osakekohtaisella voitolla pystyisi maksaman osakkeen hinnan)
+    <br>
+    * P/B (yhtiön taseen oman pääoman arvo suhteessa markkinakurssiin, miinusmerkkisen ollessa aliarvostettu)
+    <br>
+    perustuu tuotto-odotus pääasiassa liiketaoiminnalliseen tulokseen ja korkeaan osinkotuottoon. Vastakohta tälle olisi
+    kasvuosake, jonka tarjonnan ja kysynnän (niukkuus) arvon heilahtelulla yritetään tienata.
+    <br>
+    HUOM! Korkea P/E & P/B luku voi kertoa huonosta liiketaoiminnallisesta tuloksesta ja/tai jälkimarkkinoilla niukasti
+    tarjolla olevasta kohteesta, joka on kuitenkin suuren kysynnän kohteena. Syklinen osake puolestaan on sellainen
+    osake, jonka arvoon suhdanteiden muutokset vaikuttavat merkittävästi (esimerkiksi metsä- ja raskaan
+    metalliteollisuuden osakkeet).
+    <br>
+    <br>
+    Likviditeetti eli rahaksimuutettavuus on esim. kryptovaluutoilla ehkä hankalampaa. Eli vaikka omistaisi kohdetta
+    (Nokian osake, Bitcoin tms) vaikka kuinka paljon on se arvotonta jos ei se muutu fiat:iksi (käteiseksi rahaksi kuten
+    euro) jonka voi vaihtaa ruokaan lähikaupassa.
+    <br>
+    Saturaatio eli kyllästyminen on sitä, että esim. Bitcoinin tarjonta alkaa ylittää kysynnän (Bear market), jolloin
+    niin sanotusti markkina eli kysyntä ei enää kasva (Bull market) sen hyödykkeen osalta.
+</article>
+
+{%endblock content%}

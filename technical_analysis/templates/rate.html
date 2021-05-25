@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{%block JSON_LD%}
+<!-- https://schema.org/Organization -->
+<!-- <script type="application/ld+json">{
+        "@context": "https://schema.org", 
+        "@type": "fooBar",
+      }</script> -->
+{%endblock JSON_LD%}
+
+
+{%block content%}
+<p>
+<a href="/">Start again (go back to home page)</a>
+</p>
+{%endblock content%}
+
+{%block time_series%}
+
+//FIXME
+src = "../img/" + {{target}} + "rateanalysis.png"
+<img src={{src}}>
+
+<br>
+<button onclick="window.location.href='/';" value="Technical analysis tool">Reset</button>
+
+<article>
+    <h2>Tekninen analyysi</h2>
+    <br>
+    Jos osakkeen hinta (yllä olevassa kuviossa sininen käyrä) nousee lyhyemmän ajankohdan liukuvan keskiarvonsa
+    <br>
+    eli oranssi-käyrän yläpuolelle
+    <br>
+    saattavat jotkut sijoittajat tulkita sen ostokehoitukseksi (Bull market).
+    <br>
+    <br>
+    Jos osakkeen hinta (yllä olevassa kuviossa sininen käyrä) laskee lyhyemmän ajankohdan liukuvan keskiarvonsa
+    <br>
+    eli oranssi-käyrän alapuolelle
+    <br>
+    saattavat jotkut sijoittajat tulkita sen myyntikehoitukseksi (Bear market).
+    <br>
+    <br>
+    **
+    <br>
+    <br>
+    Jos lyhyemmän ajankohdan oranssi-käyrä ylittää pidemmän ajankohdan vihreän-käyrän (Golden Cross)
+    <br>
+    saattavat jotkut sijoittajat tulkita sen ostokehoitukseksi (Bull market).
+    <br>
+    <br>
+    Ja jos lyhyemmän ajankohdan oranssi-käyrä alittaa pidemmän ajankohdan vihreän-käyrän (Death Cross)
+    <br>
+    saattavat jotkut sijoittajat tulkita sen myyntikehoitukseksi (Bear market).
+    <br>
+    <br>
+    **
+    <br>
+    <br>
+    Kuvion esimerkistä voisi kehitellä jonkun oman version yhdistelemällä ne:
+    <br>
+    JOS
+    <br>
+    lyhyemmän ajankohdan oranssi-käyrä on ylempänä kuin pidemmän ajankohdan vihreä-käyrä (Golden Cross)
+    <br>
+    JA
+    <br>
+    osakkeen hinta (yllä olevassa kuviossa sininen käyrä) on ylempänä kuin lyhyemmän ajankohdan oranssi-käyrä
+    <br>
+    NIIN
+    <br>
+    osta.
+    <br>
+    <br>
+    JOS lyhyemmän ajankohdan oranssi-käyrä alittaa pidemmän ajankohdan vihreän-käyrän (Death Cross)
+    <br>
+    JA
+    <br>
+    osakkeen hinta (yllä olevassa kuviossa sininen käyrä) on alempana kuin lyhyemmän ajankohdan oranssi-käyrä
+    <br>
+    NIIN
+    <br>
+    myy.
+    <br>
+    <b>Liukuvan keskiarvon ongelma on kuitenkin se, että se on vain ja ainoastaan historiadataa eikä kerro mitään tulevaisuudesta</b>
+</article>
+{%endblock time_series%}
+
+
+
+{%block volatilite%}
+<h2>Volatiliteetti</h2>
+
+<article>
+    Kohteen arvon heilahtelua ja sen rajuutta (ennakoinnin kannalta paljon heilahteleva on korkea riskinen) kuvataan volatiliteetilla. Volatiliteetti voi tosin muuttua.
+    <br>
+    <a href="https://fi.wikipedia.org/wiki/Volatiliteetti" target="_blank">wikipedia.org/wiki/Volatiliteetti</a>
+    <br>
+    Kurssin päivittäisistä muutosprosenteista voidaan ottaa keskihajonta ja aggregoinnin tapaan skaalata se vuositasolle (vuoden kaupantekopäivien lukumäärän kerrotaan neliöjuurella), jolloin saadaan volatiliteetti vuoden aikahorisontilla
+</article>
+
+
+//FIXME
+src = "../img/" + {{target}} + "volatilite.png"
+<img src={{src}}>
+
+<article>
+    Yllä olevaa kuviota tulkitaan siten, että mitä matalammalla oleva käyrä sitä vähäriskisempi kohde. Koronakeväästä 2020 johtien kurssiheilahtelu on jossain vaiheessa ollut niin rajua, että kohde on ollut korkea riskinen
+</article>
+{%endblock volatilite%}
