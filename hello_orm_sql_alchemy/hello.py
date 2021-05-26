@@ -8,17 +8,17 @@ db = SQLAlchemy(app)
 class Merkinnat(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     kommentti = db.Column(db.String, nullable=False)
-    tekijä = db.Column(db.String, nullable=False)
+    tekija = db.Column(db.String, nullable=False)
 
 
 @app.before_first_request
 def alustus():
     db.create_all()
 
-    kommentti = Merkinnat(kommentti="Kukkuu", tekijä="Minä")
+    kommentti = Merkinnat(kommentti="Kukkuu", tekija="Minä")
     db.session.add(kommentti)
 
-    kommentti = Merkinnat(kommentti="Huhuu", tekijä="Sinä")
+    kommentti = Merkinnat(kommentti="Huhuu", tekija="Sinä")
     db.session.add(kommentti)
 
     db.session.commit()
