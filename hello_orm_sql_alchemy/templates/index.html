@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for item in lista %}
+<p>{{ item.tekijä }}: {{ item.kommentti }}</p>
+{% endfor %}
+
+
+{% endblock content %}
