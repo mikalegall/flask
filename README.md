@@ -2,11 +2,40 @@
 
 Tero Karvisen [opissa](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/ "Python Web Service From Idea to Production") saadut etätehtävät MarkDownilla tallennettuna ([Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)):
 <br>
-Kun on tarvetta samanaikaisuuden hallinnalle rinnakkaisilla [säikeillä (thread)](https://wiki.aalto.fi/download/attachments/72895679/luento12.pdf) ei arkkitehtuurisissa valinnoissa välttämättä kannattane suosia siltä osin Pythonia. Pythonissa ei ole erikseen public / private / protected metodeja eikä myöskään ole mitään gettereitä ja settereitä vaan attribuuttia voi käyttää suoraan. Python on niin sanotusti tyypittämätön kieli vaikka seillä tyypit ovatkin tuettu (vaihtuvat lennosta).
-
-
-DB: Pythonille [SQLAlchemy](https://en.wikipedia.org/wiki/SQLAlchemy) (ORM) <--> [PostgreSQL](https://terokarvinen.com/search/?q=postgre)
+Kun on tarvetta samanaikaisuuden hallinnalle rinnakkaisilla [säikeillä (thread)](https://wiki.aalto.fi/download/attachments/72895679/luento12.pdf) ei arkkitehtuurisissa valinnoissa välttämättä kannattane suosia siltä osin Pythonia. Pythonissa ei ole erikseen public / private / protected metodeja eikä myöskään ole mitään gettereitä ja settereitä vaan attribuuttia voi käyttää suoraan. Python on niin sanotusti tyypittämätön kieli vaikka siellä tyypit ovatkin tuettu (vaihtuvat lennosta).
 <br>
+<br>
+
+## Isokuva
+Hibernate <--> Java <--> Thymeleaf
+<br>
+& Html + CSS + JavaScript
+<br>
+--> SPA: React (VueJS visualisoinneille) <--> Contentful (GatsbyJS & GraphQL)
+<br>
+* AWS / Azure / Gcloud / Oracle cloud
+<br>
+* Python analytiikkaan
+<br>
+
+SQLAlchemy <--> Python <--> Flask (Jinja2)
+<br>
+& Html + CSS + JavaScript
+<br>
+--> SPA: React (VueJS visualisoinneille) <--> Contentful (GatsbyJS & GraphQL)
+<br>
+* AWS / Azure / Gcloud / Oracle cloud
+<br>
+* Python analytiikkaan
+<br>
+<br>
+
+### Suositeltava ensimmäinen ohjelmoinnin opettelu pohjataidoiksi on
+DB: Pythonille [SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) (ORM) <--> [PostgreSQL](https://terokarvinen.com/search/?q=postgre)
+
+
+    sudo apt install python3-flask-sqlalchemy
+
 (jolla myös [web-sivun lomakkeet](https://terokarvinen.com/2020/flask-automatic-forms/)
 <br>
 from wtforms.ext.sqlalchemy.orm import model_form
@@ -69,7 +98,7 @@ Domain: [Namecheap](https://www.namecheap.com/domains/#pricing), [Gandi](https:/
 
 Pythonin perussyntaksi versiolla 1.0 on avattu juurta jaksaen suomenkielellä sijainnissa https://web.archive.org/web/20180517070419/http://www.cs.hut.fi/~ttsirkia/Python.pdf
 
-Vaikka versio 2.0 on jo julkaistu kannattanee silti vielä jonkun aikaa toimia aiemmalla versiolla kunnes kaikki lastentaudit on sairastettu https://flask.palletsprojects.com/en/1.0.x/quickstart/
+Vaikka Pythonin web frameworkin Flaskin versio 2.0 on jo julkaistu kannattanee silti vielä jonkun aikaa toimia aiemmalla versiolla https://flask.palletsprojects.com/en/1.0.x/quickstart/
 
 
 ### [pw1.1 (Hei maailma)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw1-hello-flask-world): HTML
@@ -100,3 +129,14 @@ https://github.com/mikalegall/flask/tree/main/print_list_for_in
 <br>
 ### [pw2.4 (Lomakerunko)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw2-muotit-ja-lomakkeet):
 https://github.com/mikalegall/flask/tree/main/form_minimum
+
+<br>
+<br>
+
+### [pw3.1 (Eri Flash viestit)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw3-orm---luokista-lomakkeet-ja-tietokannat):
+https://github.com/mikalegall/flask/tree/main/flash_multiple
+<br>
+<br>
+### [pw3.2 (Web-lomake ja tietokannan alustus keskusmuisttin)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw3-orm---luokista-lomakkeet-ja-tietokannat):
+https://github.com/mikalegall/flask/tree/main/form
+
