@@ -14,7 +14,6 @@ Hibernate <--> Java <--> Thymeleaf
 --> SPA: React (VueJS visualisoinneille) <--> Contentful (GatsbyJS & GraphQL)
 <br>
 * AWS / Azure / Gcloud / Oracle cloud
-<br>
 * Python analytiikkaan
 <br>
 
@@ -25,7 +24,6 @@ SQLAlchemy <--> Python <--> Flask (Jinja2)
 --> SPA: React (VueJS visualisoinneille) <--> Contentful (GatsbyJS & GraphQL)
 <br>
 * AWS / Azure / Gcloud / Oracle cloud
-<br>
 * Python analytiikkaan
 <br>
 <br>
