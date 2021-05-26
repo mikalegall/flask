@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang ="fi">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Otsikko</title>
+	</head>
+	<body>
+
+		<p>Tämä "navigaatio" on kirjoitettu base.html sivulle
+		<nav>
+			<a href="/">Kotisivu</a> - <a href="/uudelleenohjaus">uudelleenohjaus etusivulle</a> - <a href="/vilauta">KlikkaaMua</a>
+		</nav>
+		</p>
+		
+		<h1>Otsikko</h1>
+
+		{% block content %}
+		<p>Tämä teksti on kirjoitettu base.html sivulle</p>
+		{% endblock content %}
+
+	</body>
+</html>

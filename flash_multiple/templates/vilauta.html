@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Tämä teksti on kirjoitettu vilauta.html sivulle</p>
+
+<!-- https://flask.palletsprojects.com/en/1.0.x/patterns/flashing/#message-flashing-pattern -->
+{% if get_flashed_messages() %}
+
+    {% for viesti in get_flashed_messages() %}
+        <p>
+		{{ viesti }}
+		</p> 
+    {% endfor %}
+
+{% endif %}
+
+{% endblock content %}
