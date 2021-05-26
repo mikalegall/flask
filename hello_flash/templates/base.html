@@ -6,13 +6,18 @@
 		<title>Otsikko</title>
 	</head>
 	<body>
+
+		<p>Tämä "navigaatio" on kirjoitettu base.html sivulle
+		<nav>
+			<a href="/">Kotisivu</a> - <a href="/uudelleenohjaus">Kokeile Flash viestiä</a>
+		</nav>
+		</p>
+		
 		<h1>Otsikko</h1>
-				
-		<aside>
+
 		{% block content %}
 		<p>Tämä teksti on kirjoitettu base.html sivulle</p>
 		{% endblock content %}
-		</aside>
-		
+
 	</body>
 </html>
