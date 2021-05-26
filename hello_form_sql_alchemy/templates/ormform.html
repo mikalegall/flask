@@ -8,10 +8,16 @@
 	</p>
 
 	<form method=POST>
-		{% for item in form %}
-                 <p>{{ item.label }}: {{ item }}</p>
-		{% endfor %}
-		<input type=submit>
+
+        {% for item in form %}
+	        {% if not item.flags.hidden %}
+        	<p>
+		{{ item.label }}: {{ item }}
+		</p>
+        	{% endif %}
+        {% endfor %}
+
+	<input type=submit>
 	</form>
 {% endblock content %}
 
