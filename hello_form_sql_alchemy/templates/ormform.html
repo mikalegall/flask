@@ -12,9 +12,11 @@
         {% for item in form %}
 	        {% if not item.flags.hidden %}
         	<p>
-		{{ item.label }}: {{ item }}
-		</p>
+		{{ item.label }}:
         	{% endif %}
+
+		{{ item }}
+		</p>
         {% endfor %}
 
 	<input type=submit>
