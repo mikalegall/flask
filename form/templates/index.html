@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+	title = "Index-sivun otsikko" 
+{% block content %}
+<div>
+	<form method=POST>
+
+	{% for alkio in lomake %}
+
+	<p>
+		{% if not alkio.flags.hidden %}
+
+		{{ alkio.label }}:
+        	{% endif %}
+
+	{{ alkio }}
+	</p>
+        {% endfor %}
+
+	<input type=submit>
+	</form>
+
+	<p>
+	Kertaalleen kirjotellut päiväkirjamerkinnät tulostuu alle (sitten kun niitä on):
+	<br><br>
+	{% for raapustus in merkinnat  %}
+	Nimimerkki "{{ raapustus.kirjoittaja }}" jätti viestin "{{ raapustus.viesti }}"
+	<br>
+
+	{% endfor %}
+	</p>
+</div>
+{% endblock content %}
