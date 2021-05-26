@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<p>Pythonilla kirjoitettu luokka on muunnettu Flaskin (SQLAlchemy) avulla tietokantatauluksi.
+	<br>
+	<br>
+	Tietokantatataulusta on automaagisesti generoitu Flaskin muottimoottorille (Jinja2) lomakekentät Flaskin (FlaskForm) toimesta, jotka näytetään alla
+	</p>
+
+	<form method=POST>
+		{% for item in form %}
+                 <p>{{ item.label }}: {{ item }}</p>
+		{% endfor %}
+		<input type=submit>
+	</form>
+{% endblock content %}
+
+
