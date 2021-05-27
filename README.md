@@ -138,3 +138,9 @@ https://github.com/mikalegall/flask/tree/main/flash_multiple
 ### [pw3.2 (Web-lomake ja tietokannan alustus keskusmuistiin)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw3-orm---luokista-lomakkeet-ja-tietokannat):
 https://github.com/mikalegall/flask/tree/main/form
 
+<br>
+<br>
+
+### [pw4.1 (Osoitekirja)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw4-crud---kokonainen-tietokantaohjelma-wepissa):
+https://github.com/mikalegall/flask/tree/main/wannabe_crm
+
