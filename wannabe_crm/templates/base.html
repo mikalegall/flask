@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% if not title %}
+	{% set title = "CRM coming soon" %}
+{% endif %}
+
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css"></style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Author" content="Le Gall" />
+	<title>{{ title }}</title>
+	{%block JSON_LD%}
+	{%endblock JSON_LD%}
+</head>
+
+<body>
+	<h1>{{ title }}</h1>
+	{% for message in get_flashed_messages()%}
+		<font color="tomato"><b>{{ message }}</b></font>
+	{% endfor%}
+
+	{% block content %}
+	{% endblock %}
+</body>
+
+</html>

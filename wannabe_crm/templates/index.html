@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+	<!-- Just in case for copy+paste mistakes -->
+	{% if not title %}
+		{% set title = "Wannabe CRM" %}
+	{% endif %}
+
+
+{% set title = "Customer data" %}
+
+<!-- SEO -->
+{%block JSON_LD%}
+<!-- https://schema.org/Organization -->
+<script type="application/ld+json">{
+        "@context": "https://schema.org", 
+        "@type": "Organization", 
+        "url": "https://foo.fi/", 
+        "legalName" : "Oma Firma Oy",
+        "foundingDate": "2021",
+        "logo": "https://images.ctfassets.net/logo.svg",
+        "sameAs" : [
+          "https://rakenne.wordpress.com/",
+          "https://pakollinen1234.wordpress.com",
+          "https://github.com/mikalegall/",
+          "https://fi.linkedin.com/in/mika-le-gall-238088212",
+          "https://fi.linkedin.com/in/mika-le-gall-89648385"
+          ],
+          "address" : {
+            "@type": "PostalAddress",
+            "addressLocality" : "Helsinki",
+            "addressCountry" : "FI",
+            "postalCode" : "00100",
+            "streetAddress" : "Jokukatu"
+          },
+           "contactPoint": {
+           "@type": "ContactPoint",
+           "contactType": "sales",
+           "telephone": "+358 40 123 456",
+           "email": "myynti@foo.fi"
+       }  
+      }</script>
+{%endblock JSON_LD%}
+
+
+{% block content %}
+<h2>Manage records</h2>
+<form method=POST>
+	<!-- https://wtforms.readthedocs.io/en/2.3.x/fields/ -->
+	{% for field in form %}
+<!-- TODO Remove all comments -->	
+		{% if not field.flags.hidden %} <!-- If visible then continue (hide Cross-site request forgery) defence -->
+			{% if not field.name == "first_time_saved" %} <!-- Hide customer.first_time_saved -->
+			{% if not field.name == "last_time_edited" %} <!-- Hide customer.last_time_edited -->
+			{% if not field.name == "record_deleted" %} <!-- Hide customer.record_deleted -->
+
+			{{ field.label }}
+			{% endif %}
+			{% endif %}
+			{% endif %}
+		{% endif %}
+
+		{% if not field.name == "first_time_saved" %} <!-- Hide customer.first_time_saved -->
+		{% if not field.name == "last_time_edited" %} <!-- Hide customer.last_time_edited -->
+		{% if not field.name == "record_deleted" %} <!-- Hide customer.record_deleted -->
+
+
+		{{ field }}
+		{% endif %}
+		{% endif %}
+		{% endif %}
+
+	<br>
+	{% endfor %}
+
+	<input type="submit">
+</form>
+<p>
+	{% for customer in customers %}
+
+	<a href="/{{ customer.id }}/edit">Edit</a>
+	<br>
+	First time saved {{ customer.first_time_saved }}
+	<br>
+	Customer ID = {{ customer.id }}
+	<br>
+	Family name {{ customer.family_name }}
+	<br>
+	Given name {{ customer.given_name }}
+	<br>
+	Email {{ customer.email }}
+	<br>
+	Telephone {{ customer.telephone }}
+	<br>
+	Last time edited {{ customer.last_time_edited }}
+	<br>
+	Record deleted {{ customer.record_deleted }}
+	<br>
+	<a href="/{{ customer.id }}/delete">Delete</a>
+	<br>
+	<br>
+
+	{% endfor %}
+</p>
+{% endblock content %}
