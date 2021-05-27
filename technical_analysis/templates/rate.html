@@ -16,12 +16,8 @@
 {%endblock content%}
 
 {%block time_series%}
-
-//FIXME
-src = "../img/" + {{target}} + "rateanalysis.png"
-<img src={{src}}>
-
-<br>
+<img src="{{ url_for('static', filename='images/rateanalysis.png') }}">
+<br/>
 <button onclick="window.location.href='/';" value="Technical analysis tool">Reset</button>
 
 <article>
@@ -89,22 +85,19 @@ src = "../img/" + {{target}} + "rateanalysis.png"
 
 
 {%block volatilite%}
-<h2>Volatiliteetti</h2>
-
 <article>
+    <h2>Volatiliteetti</h2>
     Kohteen arvon heilahtelua ja sen rajuutta (ennakoinnin kannalta paljon heilahteleva on korkea riskinen) kuvataan volatiliteetilla. Volatiliteetti voi tosin muuttua.
     <br>
     <a href="https://fi.wikipedia.org/wiki/Volatiliteetti" target="_blank">wikipedia.org/wiki/Volatiliteetti</a>
     <br>
     Kurssin päivittäisistä muutosprosenteista voidaan ottaa keskihajonta ja aggregoinnin tapaan skaalata se vuositasolle (vuoden kaupantekopäivien lukumäärän kerrotaan neliöjuurella), jolloin saadaan volatiliteetti vuoden aikahorisontilla
-</article>
 
-
-//FIXME
-src = "../img/" + {{target}} + "volatilite.png"
-<img src={{src}}>
-
-<article>
+    <img src="{{ url_for('static', filename='images/volatilite.png') }}">
+    <br>
+    <button onclick="window.location.href='/';" value="Technical analysis tool">Reset</button>
+    <br>
     Yllä olevaa kuviota tulkitaan siten, että mitä matalammalla oleva käyrä sitä vähäriskisempi kohde. Koronakeväästä 2020 johtien kurssiheilahtelu on jossain vaiheessa ollut niin rajua, että kohde on ollut korkea riskinen
 </article>
+
 {%endblock volatilite%}
