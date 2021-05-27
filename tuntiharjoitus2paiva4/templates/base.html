@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% if not title %}
+		{% set title = "base.html" %}
+	{% endif %}
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- en muista ulko https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+	<title>{{ title }}</title>
+</head>
+<body>
+	<h1>{{ title }}</h1>
+	{% for vilautus_sanoma in get_flashed_messages()%}
+		<font color="tomato"><b>{{ vilautus_sanoma }}</b></font>
+	{% endfor%}
+
+	{% block content %}
+	{% endblock %}
+</body>
+
+</html>
