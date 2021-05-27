@@ -1,0 +1,32 @@
+{% if not title %}
+	{% set title = "Index.html" %}
+{% endif %}
+
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<!-- <p>Index</p> -->
+
+<p>
+	<form method=POST>
+		{% for kentta in lomake %}
+			{% if not kentta.flags.hidden %} <!-- jos tyyppi ei ole piilotettu, niin näytä label-->
+				{{ kentta.label }}
+			{% endif %}
+		{{ kentta }}
+		<br>
+		{% endfor %}
+
+		<input type="submit">
+	</form>
+</p>
+
+<p>
+	{% for kasvi in kasvit %}
+		Tietokantaan on tallennettu kasvi nimeltä: {{ kasvi.nimi }} ja sen väri on: {{ kasvi.vari }}
+		<br>
+	{% endfor %}
+</p>
+{% endblock content %}
