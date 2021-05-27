@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% if not title %}
+	{% set title = "copy+paste pohjaksi vakio otsikko varmuuden varalta" %}
+{% endif %}
+
+
+{% set title = "Index.html" %}
+
+{% block content %}
+<!-- <p>Index</p> -->
+
+<p>
+	<h2>Kasveja</h2>
+	<form method=POST>
+		{% for kentta in lomake %}
+			{% if not kentta.flags.hidden %} <!-- jos tyyppi ei ole piilotettu, niin näytä label-->
+				{{ kentta.label }}
+			{% endif %}
+		{{ kentta }}
+		<br>
+		{% endfor %}
+
+		<input type="submit">
+	</form>
+</p>
+
+<p>
+	{% for kasvi in kasvit %}
+	{{ kasvi.vari }} {{ kasvi.nimi }} <a href="/{{ kasvi.id }}/korjaa">Muokkaa</a> - <a href="/{{ kasvi.id }}/poista">Poista</a>
+		<br>
+	{% endfor %}
+</p>
+{% endblock content %}

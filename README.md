@@ -135,6 +135,6 @@ https://github.com/mikalegall/flask/tree/main/form_minimum
 https://github.com/mikalegall/flask/tree/main/flash_multiple
 <br>
 <br>
-### [pw3.2 (Web-lomake ja tietokannan alustus keskusmuisttin)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw3-orm---luokista-lomakkeet-ja-tietokannat):
+### [pw3.2 (Web-lomake ja tietokannan alustus keskusmuistiin)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw3-orm---luokista-lomakkeet-ja-tietokannat):
 https://github.com/mikalegall/flask/tree/main/form
 
