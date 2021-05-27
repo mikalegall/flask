@@ -37,7 +37,11 @@ def analyze(target, short_rolling_mean, long_rolling_mean):
     # Hae kohde-etuuden tunniste noudetettavasta kohteesta
     # https://duckduckgo.com/?q=yahoo+finance+elisa
     # https://duckduckgo.com/?q=yahoo+finance+nordea+bull+dax+10
-    target_data = web.DataReader(target, start='2015-1-1', data_source='yahoo')
+    try:   
+        target_data = web.DataReader(target, start='2015-1-1', data_source='yahoo')
+    except Exception as e:
+        print("ECEPTION e = ", e)
+
     print("target_data = ", target_data)
     # Valitaan graafinen esittäminen muotoiltavaksi tietyllä tyylillä
     plt.style.use('seaborn-whitegrid')
@@ -57,7 +61,7 @@ def analyze(target, short_rolling_mean, long_rolling_mean):
     ##Figure https://tilastoapu.wordpress.com/2019/07/02/kuviot-ja-kaaviot-pythonilla/
     ###Get current figure (plt.gct)
     #### https://video.haaga-helia.fi/media/Data-analytiikka+Zoom-tallenne+21.4.2021/0_xj9pcn3d
-    plt.gcf().savefig(os.path.join(ROOT_DIR, 'img', 'rateanalysis.png'), bbox_inches = 'tight')
+    plt.gcf().savefig(os.path.join(ROOT_DIR, 'static', 'images', 'rateanalysis.png'), bbox_inches = 'tight')
     #Ilman lisäparametria bbox_inches='tight' saattaa kuvion reunoilta jäädä osa tallentumatta
 
 
@@ -70,19 +74,19 @@ def analyze(target, short_rolling_mean, long_rolling_mean):
     target_data['percent'] = target_data['Close'].pct_change()
     #Liitetään konkatenoinnilla juuri luodut muutosprosentti-sarakket kolmanteen taulukkoon
     #muutokset = pd.concat([elisa['Elisa %'], telia['Telia %']], axis = 1)
-    changes = target_data['percent']
-    print(changes)
+#changes = target_data['percent']
     #Vuosittaisen volatiliteetin muutosprosentin keskihajonta jatkuvasti rullaava (liukuva, rolling)
     ##Komento rolling() ottaa parametrikseen ajankohtien lukumäärän
     ##Lasketaan vuoden kaupantekopäivien (252 päivää) muutosprosenteille jatkuvasti päivittyvänä (rullaavana, liukuvana)
     ##keskihajonta (standard deviation) komennolla std() ja skaalataan se neliöjuurella kertomalla vuosittaiseksi
     ##sekä esitetään se plotaten graafisena visualisointina (lopulta suurennetaan esitysaluetta oletuskoostaan suuremmaksi)
-    (changes['percent'].rolling(252).std() * (252**0.5)).plot(label = target, legend = True, figsize=(14,6))
+#(changes['percent'].rolling(252).std() * (252**0.5)).plot(label = target, legend = True, figsize=(14,6))
+    (target_data['percent'].rolling(252).std() * (252**0.5)).plot(label = target, legend = True, figsize=(14,6))
     #Save figure
     ##Figure https://tilastoapu.wordpress.com/2019/07/02/kuviot-ja-kaaviot-pythonilla/
     ###Get current figure (plt.gct)
     #### https://video.haaga-helia.fi/media/Data-analytiikka+Zoom-tallenne+21.4.2021/0_xj9pcn3d
-    plt.gcf().savefig(os.path.join(ROOT_DIR, 'img', 'volatilite.png'), bbox_inches = 'tight')
+    plt.gcf().savefig(os.path.join(ROOT_DIR, 'static', 'images', 'volatilite.png'), bbox_inches = 'tight')
     #Ilman lisäparametria bbox_inches='tight' saattaa kuvion reunoilta jäädä osa tallentumatta
 
     return "done"
