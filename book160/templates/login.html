@@ -1,0 +1,28 @@
+{% set title="Kirjaudu" %}
+{% extends "base.html" %}
+
+{% block nav %}
+<a href="/">Etusivu</a> -
+<a href="/user/register">REKISTERÖIDY</a>
+
+{% endblock nav %}
+
+{% block content %}
+
+<form method=post>
+	{% for field in form %}
+	{% if not field.flags.hidden %}
+	{{ field.label }}
+	{% endif %}
+
+	{{ field }}
+
+	{% for err in field.errors %}
+	<b>{{ err }}</b>
+	{% endfor %}
+
+	<br>
+	{% endfor %}
+	<input type="submit" value="Lähetä">
+</form>
+{% endblock content %}

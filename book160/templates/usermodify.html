@@ -1,0 +1,42 @@
+{% set title = "Muokkaa profiilia" %}
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<form method=POST>
+
+	<!-- https://wtforms.readthedocs.io/en/2.3.x/fields/ -->
+	{% for field in form %}
+	{% if not field.flags.hidden %}
+	{% if not field.name == "first_time_saved" %}
+	{% if not field.name == "last_time_edited" %}
+	{% if not field.name == "passwordHash" %}
+	{% if not field.name == "record_deleted" %}
+
+	{{ field.label }}
+	{% endif %}
+	{% endif %}
+	{% endif %}
+	{% endif %}
+	{% endif %}
+
+	{% if not field.name == "first_time_saved" %}
+	{% if not field.name == "last_time_edited" %}
+	{% if not field.name == "passwordHash" %}
+	{% if not field.name == "record_deleted" %}
+
+
+	{{ field }}
+	{% endif %}
+	{% endif %}
+	{% endif %}
+	{% endif %}
+	<br>
+	{% for error in field.erros %}
+	<b>{{ error }}</b>
+	{% endfor %}
+	{% endfor %}
+	<input type="submit" value="Tallenna">
+</form>
+{% endblock content %}

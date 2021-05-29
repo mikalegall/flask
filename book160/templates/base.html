@@ -1,0 +1,40 @@
+{% if not title %}
+{% set title = "Book160" %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css"></style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Author" content="Le Gall" />
+	<title>{{ title }}</title>
+</head>
+
+<body>
+	{% block nav %}
+	{% if not currentUser() %}
+	<nav>
+		<a href="/">Etusivu</a> - <a href="/user/login">Kirjaudu</a>
+	</nav>
+	{% endif %}
+
+	{% if currentUser() %}
+	<nav>
+		<a href="/">Etusivu</a> - <a href="/user/logout">Kirjaudu ulos</a>
+	</nav>
+	{% endif %}
+	{% endblock nav%}
+
+	<h1>{{ title }}</h1>
+	{% for message in get_flashed_messages()%}
+	<font color="tomato"><b>{{ message }}</b></font>
+	{% endfor%}
+
+	{% block content %}
+	{% endblock %}
+</body>
+
+</html>
