@@ -144,3 +144,8 @@ https://github.com/mikalegall/flask/tree/main/form
 ### [pw4.1 (Osoitekirja)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw4-crud---kokonainen-tietokantaohjelma-wepissa):
 https://github.com/mikalegall/flask/tree/main/wannabe_crm
 
+<br>
+<br>
+
+### [pw5.1 (Book160)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw5-users---kayttajat-ja-salasanat):
+https://github.com/mikalegall/flask/tree/main/book160
