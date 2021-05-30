@@ -37,10 +37,10 @@ def analyze(target, short_rolling_mean, long_rolling_mean):
     # Hae kohde-etuuden tunniste noudetettavasta kohteesta
     # https://duckduckgo.com/?q=yahoo+finance+elisa
     # https://duckduckgo.com/?q=yahoo+finance+nordea+bull+dax+10
-    try:   
+    try:
         target_data = web.DataReader(target, start='2015-1-1', data_source='yahoo')
     except Exception as e:
-        print("ECEPTION e = ", e)
+        print("EXCEPTION e = ", e)
 
     print("target_data = ", target_data)
     # Valitaan graafinen esittäminen muotoiltavaksi tietyllä tyylillä
@@ -53,18 +53,29 @@ def analyze(target, short_rolling_mean, long_rolling_mean):
     ##Liukuva keskiarvo voi olla singnaalina toimenpiteelle
     ##Jatkuvasti rullaava (liukuva, rolling) komento rolling() ottaa parametrikseen ajankohtien lukumäärän
     ###Lasketaan 50 viimeiselle päivälle jatkuvasti päivittyvänä (rullaavana, liukuvana) keskiarvo komennolla mean()
-    target_data['Close'].rolling(int(short_rolling_mean)).mean().plot()
+    target_data['Close'].rolling(int(short_rolling_mean)).mean().plot(title=target)
     #Samaan visualisointiin voidaan plotata (graafisesti esitettäväksi) useampia kaavioita samanaikaisesti
     ##Lasketaan Elisan osakkeen päätösluvulle 200 päivän liukuva keskiarvo
     target_data['Close'].rolling(int(long_rolling_mean)).mean().plot()
+
+    #Remove old figure
+    # rateanalysis = os.path.join(ROOT_DIR, 'static', 'images', 'rateanalysis.png')
+    # try:
+    #     os.remove(rateanalysis)
+    # except Exception as e:
+    #     print("EXCEPTION e = ", e)
+    
     #Save figure
     ##Figure https://tilastoapu.wordpress.com/2019/07/02/kuviot-ja-kaaviot-pythonilla/
     ###Get current figure (plt.gct)
     #### https://video.haaga-helia.fi/media/Data-analytiikka+Zoom-tallenne+21.4.2021/0_xj9pcn3d
-    plt.gcf().savefig(os.path.join(ROOT_DIR, 'static', 'images', 'rateanalysis.png'), bbox_inches = 'tight')
+    try:
+        plt.gcf().savefig(os.path.join(ROOT_DIR, 'static', 'images', 'rateanalysis.png'), bbox_inches = 'tight')
+        plt.close()
+    except Exception as e:
+        print("EXCEPTION e = ", e)
     #Ilman lisäparametria bbox_inches='tight' saattaa kuvion reunoilta jäädä osa tallentumatta
-
-
+    ## https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html
 
 
     #Usein tarkoituksenmukaisempaa on tarkastella muutosta prosentuaalisena
@@ -82,11 +93,23 @@ def analyze(target, short_rolling_mean, long_rolling_mean):
     ##sekä esitetään se plotaten graafisena visualisointina (lopulta suurennetaan esitysaluetta oletuskoostaan suuremmaksi)
 #(changes['percent'].rolling(252).std() * (252**0.5)).plot(label = target, legend = True, figsize=(14,6))
     (target_data['percent'].rolling(252).std() * (252**0.5)).plot(label = target, legend = True, figsize=(14,6))
+
+    #Remove old figure
+    # rateanalysis = os.path.join(ROOT_DIR, 'static', 'images', 'volatilite.png')
+    # try:
+    #     os.remove(rateanalysis)
+    # except Exception as e:
+    #     print("EXCEPTION e = ", e)
+
     #Save figure
     ##Figure https://tilastoapu.wordpress.com/2019/07/02/kuviot-ja-kaaviot-pythonilla/
     ###Get current figure (plt.gct)
     #### https://video.haaga-helia.fi/media/Data-analytiikka+Zoom-tallenne+21.4.2021/0_xj9pcn3d
-    plt.gcf().savefig(os.path.join(ROOT_DIR, 'static', 'images', 'volatilite.png'), bbox_inches = 'tight')
+    try:
+        plt.gcf().savefig(os.path.join(ROOT_DIR, 'static', 'images', 'volatilite.png'), bbox_inches = 'tight')
+        plt.close()
+    except Exception as e:
+        print("EXCEPTION e = ", e)
     #Ilman lisäparametria bbox_inches='tight' saattaa kuvion reunoilta jäädä osa tallentumatta
 
-    return "done"
+    return "services.analytics.analyze == done"
