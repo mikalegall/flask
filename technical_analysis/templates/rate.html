@@ -8,7 +8,6 @@
       }</script> -->
 {%endblock JSON_LD%}
 
-
 {%block content%}
 <nav>
 <a href="/">Start again (go back to home page)</a>
@@ -18,6 +17,8 @@
 {%block time_series%}
 <img src="{{ url_for('static', filename='images/rateanalysis.png') }}">
 <br/>
+<button onclick="location.reload()" value="Results for analysis">Refresh figure</button>
+
 <button onclick="window.location.href='/';" value="Technical analysis tool">Reset</button>
 
 <article>
@@ -92,9 +93,11 @@
     <a href="https://fi.wikipedia.org/wiki/Volatiliteetti" target="_blank">wikipedia.org/wiki/Volatiliteetti</a>
     <br>
     Kurssin päivittäisistä muutosprosenteista voidaan ottaa keskihajonta ja aggregoinnin tapaan skaalata se vuositasolle (vuoden kaupantekopäivien lukumäärän kerrotaan neliöjuurella), jolloin saadaan volatiliteetti vuoden aikahorisontilla
-
+    <br>
     <img src="{{ url_for('static', filename='images/volatilite.png') }}">
     <br>
+    <button onclick="location.reload()" value="Results for analysis">Refresh page and figure</button>
+
     <button onclick="window.location.href='/';" value="Technical analysis tool">Reset</button>
     <br>
     Yllä olevaa kuviota tulkitaan siten, että mitä matalammalla oleva käyrä sitä vähäriskisempi kohde. Koronakeväästä 2020 johtien kurssiheilahtelu on jossain vaiheessa ollut niin rajua, että kohde on ollut korkea riskinen
