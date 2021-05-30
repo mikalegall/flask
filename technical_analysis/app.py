@@ -1,4 +1,6 @@
+#Docstring
 "Stock and currency rate for technical analysis purposes"
+
 import time
 from flask import Flask, render_template, request, redirect
 from services.analytics import analyze
@@ -30,7 +32,7 @@ def post_index():
         short_rolling_mean = request.form["short_rolling_mean"]
         long_rolling_mean = request.form["long_rolling_mean"]
         results = analyze(target, short_rolling_mean, long_rolling_mean)
-        print("results = ", results)
+        print("Analyzes results = ", results)
 
     return redirect("/rate")
 
@@ -41,6 +43,7 @@ def rate():
     return render_template('rate.html', title=title)
 
 
-# For local development
+# Local server only for development environment purposes
 if __name__ == "__main__":
+    # app.run(debug=True, port=8888)
     app.run()
