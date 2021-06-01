@@ -6,8 +6,18 @@
 {% set title = "Roadmap" %}
 
 {%block nav%}
-{%endblock nav%}
+	{% if not currentUser() %}
+	<nav>
+		<a href="/">Home</a>  &#160;&#160;&#160;&#160;&#160; <a href="/user/login">Login</a> &#160;&#160;&#160;&#160;&#160; <a href="/user/register">REGISTER</a>
+	</nav>
+	{% endif %}
 
+	{% if currentUser() %}
+	<nav>
+		<a href="/">Home</a>  &#160;&#160;&#160;&#160;&#160; <a href="/user/profile">My profile</a>  &#160;&#160;&#160;&#160;&#160;  <a href="/user/logout">Logout</a>
+	</nav>
+	{% endif %}
+{%endblock nav%}
 
 {%block content%}
 
