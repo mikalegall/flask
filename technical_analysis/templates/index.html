@@ -29,26 +29,28 @@
            "telephone": "+358 40 123 456",
            "email": "myynti@foo.fi"
        }  
-      }</script>
+}</script>
 {%endblock JSON_LD%}
 
-{% block nav %}
-{% if not currentUser() %}
-<nav>
-	<a href="/user/login">Log in</a> &#160;&#160;&#160;&#160;&#160; <a href="/user/register">REGISTER</a>
+{% set title = "Learn how to invest in 30 minutes!" %}
 
-</nav>
-{% endif %}
+{%block nav%}
+	{% if not currentUser() %}
+	<nav>
+		<a href="/user/login">Login</a> &#160;&#160;&#160;&#160;&#160; <a href="/user/register">REGISTER</a> &#160;&#160;&#160;&#160;&#160; <a href="/roadmap">Roadmap</a>
 
-{% if currentUser() %}
-<nav>
-	<a href="/user/profile">My profile</a> - <a href="/user/logout">Log out</a>
-</nav>
-{% endif %}
-{% endblock nav%}
+	</nav>
+	{% endif %}
+
+	{% if currentUser() %}
+	<nav>
+		<a href="/user/profile">My profile</a>  &#160;&#160;&#160;&#160;&#160;  <a href="/user/logout">Logout</a> &#160;&#160;&#160;&#160;&#160; <a href="/roadmap">Roadmap</a>
+	</nav>
+	{% endif %}
+{%endblock nav%}
 
 
-{% block content %}
+{%block content%}
 
 	{% if not currentUser() %}
 	<p>
@@ -172,4 +174,9 @@
 		niin sanotusti markkina eli kysyntä ei enää kasva (Bull market) sen hyödykkeen osalta.
 	</article>
 	{% endif %}		
-{% endblock content %}
+{%endblock content%}
+
+{%block footer%}
+<br>
+<a href="https://terokarvinen.com/2021/python-web-service-from-idea-to-production/" target="_blank">DIY: Python Web Service From Idea to Production (terokarvinen.com)</a>
+{%endblock footer%}
