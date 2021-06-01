@@ -10,16 +10,7 @@ import matplotlib.pyplot as plt # sudo apt install python3-matplotlib && sudo ap
 # Tuodaan käytettäväksi internetistä datan noutaja esim. Yahoo Financesta valuuttakursseille
 # https://pydata.github.io/pandas-datareader/remote_data.html#forex
 # DataReadilla noudetuissa tiedoissa on aikaleima valmiina indeksissä
-import pandas_datareader as web
-###sudo apt install python3-pip
-###pip3 install pandas_datareader
-###conda install -c anaconda pandas-datareader
-###VS codessa Ctrl+P  ext install ms-python.python
-### pip install pandas-datareader
-#git clone https://github.com/pydata/pandas-datareader.git
-#cd pandas-datareader
-#sudo python3 setup.py install
-
+import pandas_datareader as web # sudo apt install python3-pip && pip3 install pandas_datareader
 
 import os
 from pathlib import Path
