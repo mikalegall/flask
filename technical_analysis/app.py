@@ -14,8 +14,8 @@ from services.analytics import analyze
 
 app = Flask(__name__)
 #Cross Site Request Forgery estämiseen
-app.secret_key = "ofea8Aejesei9aeti7theiyieL5uch" # sudo apt install pwgen; pwgen 30 1
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql:///kyy'
+app.secret_key = "" # sudo apt install pwgen; pwgen 30 1
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql:///'
 db = SQLAlchemy(app)
 
 # https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/
@@ -91,7 +91,8 @@ def registerView():
         user = User.query.filter_by(email=email).first()
         session["uid"] = user.id
         flash("Congratulations, you are logged in!")
-        return redirect("/user/"+str(user.id)+"/modify")
+        # return redirect("/user/"+str(user.id)+"/modify")
+        return redirect("/")
 
     return render_template("register.html", form=form)
 
@@ -115,7 +116,8 @@ def loginView():
         session["uid"] = user.id
 
         flash("Login successful")
-        return redirect("/user/"+str(user.id)+"/modify")
+        # return redirect("/user/"+str(user.id)+"/modify")
+        return redirect("/")
 
     return render_template("login.html", form=form)
 
@@ -189,7 +191,4 @@ def rateView():
 def roadmapView():
     return render_template('roadmap.html')
 
-# Local server only for development environment purposes
-if __name__ == "__main__":
-    # app.run(debug=True, port=8888)
-    app.run()
+
