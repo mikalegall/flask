@@ -7,7 +7,7 @@
 {%endblock content%}
 
 {%block time_series%}
-<img src="{{ url_for('static', filename='images/rateanalysis.png') }}">
+<img src="{{ url_for('static', filename='images/rateanalysis.png') }}" alt="Rolling mean rate analysis">
 <br/>
 <button onclick="location.reload()" value="Results for analysis">Refresh figure</button>
 
@@ -86,7 +86,7 @@
     <br>
     Kurssin päivittäisistä muutosprosenteista voidaan ottaa keskihajonta ja aggregoinnin tapaan skaalata se vuositasolle (vuoden kaupantekopäivien lukumäärän kerrotaan neliöjuurella), jolloin saadaan volatiliteetti vuoden aikahorisontilla
     <br>
-    <img src="{{ url_for('static', filename='images/volatilite.png') }}">
+    <img src="{{ url_for('static', filename='images/volatilite.png') }}" alt="Volatilite">
     <br>
     <button onclick="location.reload()" value="Results for analysis">Refresh page and figure</button>
 
