@@ -14,8 +14,8 @@ from services.analytics import analyze
 
 app = Flask(__name__)
 #Cross Site Request Forgery estämiseen
-app.secret_key = "" # sudo apt install pwgen; pwgen 30 1
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql:///'
+app.secret_key = "ofea8Aejesei9aeti7theiyieL5uch" # sudo apt install pwgen; pwgen 30 1
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql:///kyy'
 db = SQLAlchemy(app)
 
 # https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/
@@ -45,6 +45,14 @@ class RegisterLoginForm(FlaskForm):
 @app.before_first_request
 def setUp_db():
     db.create_all()
+    # dummyUser = User(family_name="FamilynameTest", given_name="GivennameTest",
+    #                  email="test@test-eu", record_deleted=False)
+    # dummyUser.setPassword("näkkileipä")
+    # db.session.add(dummyUser)
+    # dummyUser = User(family_name="SukunimiTesti", given_name="EtunimiTesti",
+    #                  email="foo@bar.com", record_deleted=False)
+    # dummyUser.setPassword("pöö")
+    # db.session.add(dummyUser)
 
 UserForm = model_form(User, base_class=FlaskForm, db_session=db.session)
 
@@ -55,7 +63,7 @@ def currentUser():
         return None
     return User.query.get(uid)
 
-app.jinja_env.globals["currentUser"] = currentUser
+app.jinja_env.globals["currentUser"] = currentUser # currentUser() can be used in templates
 
 @app.errorhandler(404)
 def custom404(e):
@@ -149,7 +157,7 @@ def profileView(id):
 
 @app.route("/", methods=["GET"])
 def get_index():
-    title = "Technical analysis tool"
+    title = "Automated technical financial analysis tool"
 
     return render_template('index.html', title=title)
 
@@ -170,15 +178,18 @@ def post_index():
     return redirect("/rate")
 
 @app.route("/rate")
-def rate():
+def rateView():
     if not currentUser():
         return redirect("/")
 
     title = "Results for analysis"
     return render_template('rate.html', title=title)
 
+@app.route("/roadmap")
+def roadmapView():
+    return render_template('roadmap.html')
 
-# # Local server only for development environment purposes
-# if __name__ == "__main__":
-#     # app.run(debug=True, port=8888)
-#     app.run()
+# Local server only for development environment purposes
+if __name__ == "__main__":
+    # app.run(debug=True, port=8888)
+    app.run()
