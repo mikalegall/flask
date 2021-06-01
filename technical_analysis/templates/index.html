@@ -32,7 +32,7 @@
 }</script>
 {%endblock JSON_LD%}
 
-{% set title = "Learn how to invest in 30 minutes!" %}
+{% set title = "Learn how to invest in minutes!" %}
 
 {%block nav%}
 	{% if not currentUser() %}
@@ -53,14 +53,14 @@
 {%block content%}
 
 	{% if not currentUser() %}
-	<p>
-	Example view of the user interface 
+		<h2><a href="/user/register">Become a member in seconds!</a></h2>
+	<br />
+	Example view from the user interface of automated technical financial analysis tool 
 	<br />
 	<a href="{{ url_for('static', filename='images/example_user_interface.png') }}" target="_blank">
-	<img src="{{ url_for('static', filename='images/example_user_interface.png') }}" alt="User interface example" width="850px" height="578px">
+	<img src="{{ url_for('static', filename='images/example_user_interface.png') }}" alt="User interface example" width="800" height="544">
 	</a>
 	<br />
-	</p>
 
 	<article>
 		<h2>Tiedon visualisointi</h2>
@@ -81,7 +81,7 @@
 
 		<h3>Alpha-POC</h3>
 		<p>
-		Related micro service could be "Automated transaction into financial market" triggered by this "<i>Automated technical financial analysis</i>" program
+		Related micro service could be "Automated transaction into financial market" triggered by this "<i>Automated technical financial analysis</i>" tool.
 		<br>
 		<br>
 		Backround: &#160;
@@ -110,7 +110,7 @@
 			</select>
 			<br>
 			<br>
-			Select short period rolling mean
+			Select short period rolling mean in days
 			<select name="short_rolling_mean" id="short_rolling_mean">
 				<option value="10">10</option>
 				<option value="20">20</option>
@@ -118,7 +118,7 @@
 			</select>
 			<br>
 			<br>
-			Select long period rolling mean
+			Select long period rolling mean in days
 			<select name="long_rolling_mean" id="long_rolling_mean">
 				<option value="50">50</option>
 				<option value="100">100</option>
@@ -126,7 +126,7 @@
 			</select>
 			<br>
 			<br>
-			<input type=submit>
+			<input type="submit" value="Analyze">
 		</form>
 	</article>
 
