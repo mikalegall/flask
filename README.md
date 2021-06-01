@@ -155,3 +155,14 @@ https://github.com/mikalegall/flask/tree/main/book160
 
 ### [pw6.1 (Tuotantoasennus)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw6-deploy---tuotantoasennus):
 https://github.com/mikalegall/flask/tree/main/deployment
+
+
+<br>
+<br>
+
+### [pw7.2.2 (Miniprojektin lähdekoodi)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw7-project--all---kaikki-tanne):
+https://github.com/mikalegall/flask/tree/main/technical_analysis
+<br>
+<br>
+### [pw7.2.3 (Miniprojektin demo internetpalvelimella)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw7-project--all---kaikki-tanne):
+http://172.104.241.117/
