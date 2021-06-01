@@ -7,9 +7,14 @@
 
 <head>
     <meta charset="utf-8">
-    <!-- <style type="text/css"></style> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <style type="text/css"></style> -->    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Author" content="Le Gall" />
+    <!-- https://stackoverflow.com/questions/49547/how-do-we-control-web-page-caching-across-all-browsers -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <title>{{ title }}</title>
     {%block JSON_LD%}
     {%endblock JSON_LD%}
