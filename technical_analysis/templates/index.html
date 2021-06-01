@@ -32,98 +32,144 @@
       }</script>
 {%endblock JSON_LD%}
 
+{% block nav %}
+{% if not currentUser() %}
+<nav>
+	<a href="/user/login">Log in</a> &#160;&#160;&#160;&#160;&#160; <a href="/user/register">REGISTER</a>
 
-{%block content%}
-<article>
-<h2>Alpha-POC</h2>
-Related micro service could be "Automated transaction into financial market" triggered by this "Automated technical financial analysis" program
-<p>
-Backround:
-<br>
-<a href="https://www.investopedia.com/articles/active-trading/102914/technical-analysis-strategies-beginners.asp" target="_blank">Technical Analysis Strategies for Beginners</a>
-<br>
-<br>
-<a href="https://towardsdatascience.com/python-for-finance-automated-analysis-of-the-financial-markets-f649375bf8b2" target="_blank">Automated analysis of the financial markets (Python for finance)</a>
-<br>
-<br>
-<a href="https://www.techjockey.com/blog/best-stock-trading-software" target="_blank">Some competitors</a>
-</p>
-<article>
-    <form method=POST>
-        <input type=hidden name="cross_site_request_forgery" value="needSomeRandomness">
-        Select target
-        <select name="target" id="target">
-            <option value="BTC-EUR">Bitcoin</option>
-            <option value="ETH-EUR">Ethereum</option>
-            <option value="ELISA.HE">Elisa</option>
-            <option value="GOFORE.HE">Gofore</option>
-            <option value="ORNBV.HE">Orion</option>
-            <option value="TELIA1.HE">Telia</option>
-        </select>
-        <br>
-        <br>
-        Select short period rolling mean
-        <select name="short_rolling_mean" id="short_rolling_mean">
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-        </select>
-        <br>
-        <br>
-        Select long period rolling mean
-        <select name="long_rolling_mean" id="long_rolling_mean">
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="200">200</option>
-        </select>
-        <br>
-        <br>
-        <input type=submit>
-    </form>
-</article>
+</nav>
+{% endif %}
 
-<article>
-    <h2>Sanastoa</h2>
-    Pörssiin liittyvää sanastoa löytyy sijainnista <a href="https://www.sijoitustieto.fi/Sijoitussanasto"
-        target="_blank">sijoitustieto.fi/Sijoitussanasto</a>
-    <br>
-    <br>
-    Positiivinen tuotto markkinan
-    <br>
-    * noustessa = Bull (Bull market = nousukausi osakemarkkinoilla)
-    <br>
-    * laskiessa = Bear (Bear Market = laskukausi osakemarkkinoilla)
-    <br>
-    <br>
-    Osakesäästämisessä (esim. 15-30 vuotta) ja sijoittamisessa (esim. päivä - 3 vuotta) kilpaillaan verotonta
-    talletuspankin korkotuotto vastaan (joka maksetaan kun varallisuus lepää riskittömästi tilillä). Tuottovertailujen
-    tunnuslukuna on Alfa-kerroin. Mitä korkeampi alfa, sitä paremmin kohde on menestynyt vertailuindeksiin nähden.
-    <br>
-    Sharpen mittari kertoo, kuinka paljon enemmän sijoitus on tuottanut verrattuna riskittömään talletukseen yhtä
-    volatiliteettiyksikköä kohti. Mitä suurempi luku, sitä paremmin sijoitus on tuottanut suhteessa riskiinsä.
-    <br>
-    <br>
-    Arvo-osakkeessa on yleensä alhaiset tunnusluvut
-    <br>
-    * P/E (monenko vuoden osakekohtaisella voitolla pystyisi maksaman osakkeen hinnan)
-    <br>
-    * P/B (yhtiön taseen oman pääoman arvo suhteessa markkinakurssiin, miinusmerkkisen ollessa aliarvostettu)
-    <br>
-    perustuu tuotto-odotus pääasiassa liiketaoiminnalliseen tulokseen ja korkeaan osinkotuottoon. Vastakohta tälle olisi
-    kasvuosake, jonka tarjonnan ja kysynnän (niukkuus) arvon heilahtelulla yritetään tienata.
-    <br>
-    HUOM! Korkea P/E & P/B luku voi kertoa huonosta liiketaoiminnallisesta tuloksesta ja/tai jälkimarkkinoilla niukasti
-    tarjolla olevasta kohteesta, joka on kuitenkin suuren kysynnän kohteena. Syklinen osake puolestaan on sellainen
-    osake, jonka arvoon suhdanteiden muutokset vaikuttavat merkittävästi (esimerkiksi metsä- ja raskaan
-    metalliteollisuuden osakkeet).
-    <br>
-    <br>
-    Likviditeetti eli rahaksimuutettavuus on esim. kryptovaluutoilla ehkä hankalampaa. Eli vaikka omistaisi kohdetta
-    (Nokian osake, Bitcoin tms) vaikka kuinka paljon on se arvotonta jos ei se muutu fiat:iksi (käteiseksi rahaksi kuten
-    euro) jonka voi vaihtaa ruokaan lähikaupassa.
-    <br>
-    Saturaatio eli kyllästyminen on sitä, että esim. Bitcoinin tarjonta alkaa ylittää kysynnän (Bear market), jolloin
-    niin sanotusti markkina eli kysyntä ei enää kasva (Bull market) sen hyödykkeen osalta.
-</article>
+{% if currentUser() %}
+<nav>
+	<a href="/user/profile">My profile</a> - <a href="/user/logout">Log out</a>
+</nav>
+{% endif %}
+{% endblock nav%}
 
-{%endblock content%}
+
+{% block content %}
+
+	{% if not currentUser() %}
+	<p>
+	Example view of the user interface 
+	<br />
+	<a href="{{ url_for('static', filename='images/example_user_interface.png') }}" target="_blank">
+	<img src="{{ url_for('static', filename='images/example_user_interface.png') }}" alt="User interface example" width="850px" height="578px">
+	</a>
+	<br />
+	</p>
+
+	<article>
+		<h2>Tiedon visualisointi</h2>
+		<p>
+		Tämä on vain <a href="https://fi.wikipedia.org/wiki/Konseptitodistus" target="_blank">POC-toteutus</a> graafisesta esittämisestä
+		(<a href="https://github.com/mikalegall/flask/blob/main/LICENSE" target="_blank">MIT License</a>).
+		<a href="https://fi.wikipedia.org/wiki/Pienin_toimiva_tuote" target="_blank">MVP</a>:n toiveiden tynnyrissä on
+		backlogilla mm. kohteiden valinta vertailtavaksi korrelaation osalta. Syynä se, että hajautettaessa varoja siten ettei kaikki
+		munat ole samassa korissa, haetaan mielellään lievästi negatiivisessa korrelaatiossa olevia kohteita. Silloin ne
+		tasoittavat arvoa syöviä muutoksia.
+		</p>
+		<!-- <h2>Data visualization/h2>
+		<p>
+		This is just <a href="https://fi.wikipedia.org/wiki/Konseptitodistus" target="_blank">POC-implementation</a> about graphical representation
+		(<a href="https://github.com/mikalegall/flask/blob/main/LICENSE" target="_blank">MIT License</a>).
+		The backlog of <a href="https://fi.wikipedia.org/wiki/Pienin_toimiva_tuote" target="_blank">MVP</a> contains e.g. selection of targets for comparison for correlation. The reason is that the decentralization of funds separates assets in different risk categories when finding targets which are in slightly negative correlation. Then they smooth out the value-consuming changes.
+		</p> -->
+
+		<h3>Alpha-POC</h3>
+		<p>
+		Related micro service could be "Automated transaction into financial market" triggered by this "<i>Automated technical financial analysis</i>" program
+		<br>
+		<br>
+		Backround: &#160;
+		<a href="https://www.investopedia.com/articles/active-trading/102914/technical-analysis-strategies-beginners.asp" target="_blank">Technical Analysis Strategies for Beginners</a>
+		&#160;&#160;&#160;&#160;&#160;
+		<a href="https://towardsdatascience.com/python-for-finance-automated-analysis-of-the-financial-markets-f649375bf8b2" target="_blank">Automated analysis of the financial markets (Python for finance)</a>
+		&#160;&#160;&#160;&#160;&#160;
+		<a href="https://www.techjockey.com/blog/best-stock-trading-software" target="_blank">Some competitors</a>
+		</p>
+	</article>
+	{% endif %}
+	
+
+
+	{% if currentUser() %}
+	<article>
+		<h2>Select target</h2>
+		<form method=POST>
+			<select name="target" id="target">
+				<option value="BTC-EUR">Bitcoin</option>
+				<option value="ETH-EUR">Ethereum</option>
+				<option value="ELISA.HE">Elisa</option>
+				<option value="GOFORE.HE">Gofore</option>
+				<option value="ORNBV.HE">Orion</option>
+				<option value="TELIA1.HE">Telia</option>
+			</select>
+			<br>
+			<br>
+			Select short period rolling mean
+			<select name="short_rolling_mean" id="short_rolling_mean">
+				<option value="10">10</option>
+				<option value="20">20</option>
+				<option value="50">50</option>
+			</select>
+			<br>
+			<br>
+			Select long period rolling mean
+			<select name="long_rolling_mean" id="long_rolling_mean">
+				<option value="50">50</option>
+				<option value="100">100</option>
+				<option value="200">200</option>
+			</select>
+			<br>
+			<br>
+			<input type=submit>
+		</form>
+	</article>
+
+	<article>
+		<h2>Sanastoa</h2>
+		Pörssiin liittyvää sanastoa löytyy sijainnista <a href="https://www.sijoitustieto.fi/Sijoitussanasto"
+			target="_blank">sijoitustieto.fi/Sijoitussanasto</a>
+		<br>
+		<br>
+		Positiivinen tuotto markkinan
+		<br>
+		* noustessa = Bull (Bull market = nousukausi osakemarkkinoilla)
+		<br>
+		* laskiessa = Bear (Bear Market = laskukausi osakemarkkinoilla)
+		<br>
+		<br>
+		Osakesäästämisessä (esim. 15-30 vuotta) ja sijoittamisessa (esim. päivä - 3 vuotta) kilpaillaan verotonta
+		talletuspankin korkotuotto vastaan (joka maksetaan kun varallisuus lepää riskittömästi tilillä). Tuottovertailujen
+		tunnuslukuna on Alfa-kerroin. Mitä korkeampi alfa, sitä paremmin kohde on menestynyt vertailuindeksiin nähden.
+		<br>
+		Sharpen mittari kertoo, kuinka paljon enemmän sijoitus on tuottanut verrattuna riskittömään talletukseen yhtä
+		volatiliteettiyksikköä kohti. Mitä suurempi luku, sitä paremmin sijoitus on tuottanut suhteessa riskiinsä.
+		<br>
+		<br>
+		Arvo-osakkeessa on yleensä alhaiset tunnusluvut
+		<br>
+		* P/E (monenko vuoden osakekohtaisella voitolla pystyisi maksaman osakkeen hinnan)
+		<br>
+		* P/B (yhtiön taseen oman pääoman arvo suhteessa markkinakurssiin, miinusmerkkisen ollessa aliarvostettu)
+		<br>
+		perustuu tuotto-odotus pääasiassa liiketaoiminnalliseen tulokseen ja korkeaan osinkotuottoon. Vastakohta tälle olisi
+		kasvuosake, jonka tarjonnan ja kysynnän (niukkuus) arvon heilahtelulla yritetään tienata.
+		<br>
+		HUOM! Korkea P/E & P/B luku voi kertoa huonosta liiketaoiminnallisesta tuloksesta ja/tai jälkimarkkinoilla niukasti
+		tarjolla olevasta kohteesta, joka on kuitenkin suuren kysynnän kohteena. Syklinen osake puolestaan on sellainen
+		osake, jonka arvoon suhdanteiden muutokset vaikuttavat merkittävästi (esimerkiksi metsä- ja raskaan
+		metalliteollisuuden osakkeet).
+		<br>
+		<br>
+		Likviditeetti eli rahaksimuutettavuus on esim. kryptovaluutoilla ehkä hankalampaa. Eli vaikka omistaisi kohdetta
+		(Nokian osake, Bitcoin tms) vaikka kuinka paljon on se arvotonta jos ei se muutu fiat:iksi (käteiseksi rahaksi kuten
+		euro) jonka voi vaihtaa ruokaan lähikaupassa.
+		<br>
+		Saturaatio eli kyllästyminen on sitä, että esim. Bitcoinin tarjonta alkaa ylittää kysynnän (Bear market), jolloin
+		niin sanotusti markkina eli kysyntä ei enää kasva (Bull market) sen hyödykkeen osalta.
+	</article>
+	{% endif %}		
+{% endblock content %}
