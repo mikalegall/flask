@@ -49,12 +49,12 @@ def analyze(target, short_rolling_mean, long_rolling_mean):
     ##Lasketaan Elisan osakkeen päätösluvulle 200 päivän liukuva keskiarvo
     target_data['Close'].rolling(int(long_rolling_mean)).mean().plot()
 
-    #Remove old figure
-    # rateanalysis = os.path.join(ROOT_DIR, 'static', 'images', 'rateanalysis.png')
-    # try:
-    #     os.remove(rateanalysis)
-    # except Exception as e:
-    #     print("EXCEPTION e = ", e)
+    # Remove old figure
+    rateanalysis = os.path.join(ROOT_DIR, 'static', 'images', 'rateanalysis.png')
+    try:
+        os.remove(rateanalysis)
+    except Exception as e:
+        print("EXCEPTION e = ", e)
     
     #Save figure
     ##Figure https://tilastoapu.wordpress.com/2019/07/02/kuviot-ja-kaaviot-pythonilla/
@@ -85,12 +85,12 @@ def analyze(target, short_rolling_mean, long_rolling_mean):
 #(changes['percent'].rolling(252).std() * (252**0.5)).plot(label = target, legend = True, figsize=(14,6))
     (target_data['percent'].rolling(252).std() * (252**0.5)).plot(label = target, legend = True, figsize=(14,6))
 
-    #Remove old figure
-    # rateanalysis = os.path.join(ROOT_DIR, 'static', 'images', 'volatilite.png')
-    # try:
-    #     os.remove(rateanalysis)
-    # except Exception as e:
-    #     print("EXCEPTION e = ", e)
+    # Remove old figure
+    rateanalysis = os.path.join(ROOT_DIR, 'static', 'images', 'volatilite.png')
+    try:
+        os.remove(rateanalysis)
+    except Exception as e:
+        print("EXCEPTION e = ", e)
 
     #Save figure
     ##Figure https://tilastoapu.wordpress.com/2019/07/02/kuviot-ja-kaaviot-pythonilla/
