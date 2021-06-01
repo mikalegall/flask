@@ -60,6 +60,7 @@ sudo apt install python3
 sudo apt install python3-flask
 sudo apt install python3-flask-sqlalchemy
 sudo apt install python3-wtforms
+sudo apt install python3-flaskext.wtf
 
 ***************************************************************
 
@@ -76,7 +77,6 @@ sudo apt-get -y install python3-psycopg2
 ***************************************************************
 
 sudo apt install apache2
-sudo apt install libapache2-mod-wsgi-py3
 sudo systemctl start apache2
 sudo ufw allow 80/tcp
 sudo tail /var/log/apache2/access.log | nl
@@ -102,6 +102,8 @@ sudo nano /etc/apache2/sites-available/flask.conf
 
 sudo a2dissite 000-default.conf
 sudo a2ensite flask.conf
+sudo systemctl restart apache2
+sudo apt install libapache2-mod-wsgi-py3
 sudo systemctl restart apache2
 # sudo tail /var/log/apache2/error.log | nl
 # sudo systemctl status apache2.service -l --no-pager
