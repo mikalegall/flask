@@ -149,3 +149,9 @@ https://github.com/mikalegall/flask/tree/main/wannabe_crm
 
 ### [pw5.1 (Book160)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw5-users---kayttajat-ja-salasanat):
 https://github.com/mikalegall/flask/tree/main/book160
+
+<br>
+<br>
+
+### [pw6.1 (Tuotantoasennus)](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw6-deploy---tuotantoasennus):
+https://github.com/mikalegall/flask/tree/main/deployment
