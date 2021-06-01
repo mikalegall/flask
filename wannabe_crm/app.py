@@ -4,12 +4,12 @@ from flask import Flask, render_template, redirect, flash
 # sudo apt install python3-flask-sqlalchemy
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm  # sudo apt install python3-wtforms
-# sudo apt install python3-wtforms
-from wtforms.ext.sqlalchemy.orm import model_form
+from wtforms.ext.sqlalchemy.orm import # sudo apt install python3-flaskext.wtf
 
 app = Flask(__name__)
 # sudo apt install pwgen; pwgen 30 1
 app.secret_key = 'ua7cheemoCietahlociethijieH9Ai'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql:///kyy'
 db = SQLAlchemy(app)
 
 # https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/
