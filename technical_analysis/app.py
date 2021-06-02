@@ -45,14 +45,7 @@ class RegisterLoginForm(FlaskForm):
 @app.before_first_request
 def setUp_db():
     db.create_all()
-    # dummyUser = User(family_name="FamilynameTest", given_name="GivennameTest",
-    #                  email="test@test-eu", record_deleted=False)
-    # dummyUser.setPassword("näkkileipä")
-    # db.session.add(dummyUser)
-    # dummyUser = User(family_name="SukunimiTesti", given_name="EtunimiTesti",
-    #                  email="foo@bar.com", record_deleted=False)
-    # dummyUser.setPassword("pöö")
-    # db.session.add(dummyUser)
+
 
 UserForm = model_form(User, base_class=FlaskForm, db_session=db.session)
 
@@ -131,7 +124,7 @@ def logoutView():
     flash("Logged out")
     return redirect("/")
 
-# Index.html "Oma profiili"
+# index.html: My profile = /user/"+str(user.id)+"/modify
 @app.route("/user/profile")
 def profileRedirect():
     if currentUser():
@@ -157,6 +150,7 @@ def profileView(id):
 
     return render_template("usermodify.html", form=form, user=user)
 
+
 @app.route("/", methods=["GET"])
 def get_index():
     title = "Automated technical financial analysis tool"
@@ -179,6 +173,7 @@ def post_index():
 
     return redirect("/rate")
 
+
 @app.route("/rate")
 def rateView():
     if not currentUser():
@@ -191,4 +186,12 @@ def rateView():
 def roadmapView():
     return render_template('roadmap.html')
 
+@app.after_request
+def add_header(response):
+    response.cache_control.max_age = 0
+    return response
 
+# # Local server only for development environment purposes
+# if __name__ == "__main__":
+#     # app.run(debug=True, port=8888)
+#     app.run()
